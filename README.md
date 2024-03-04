@@ -1,4 +1,5 @@
 # compare_attributes
+contact email:matheus18.1@yahoo.com.br
 The "Compare_attribute" plugin is a tool developed for QGIS that allows users to compare two shapefiles and extract features with corresponding attributes. With an intuitive interface, this plugin simplifies the process of comparing and extracting geospatial data in the QGIS environment.
  
 **Key Features:**
@@ -22,7 +23,7 @@ Make sure to customize the description according to the specific features and fu
 O plugin "Compare_attribute é uma ferramenta desenvolvida para o QGIS que permite aos usuários comparar dois shapefiles e extrair feições com atributos correspondentes. Com uma interface intuitiva, este plugin simplifica o processo de comparação e extração de dados geoespaciais no ambiente QGIS.
  
 **Recursos Principais:**
- 
+ email para contato:matheus18.1@yahoo.com.br
 1. Compare_attributes O plugin compara os atributos das colunas selecionadas entre dois shapefiles, permitindo aos usuários identificar feições com atributos semelhantes.
  
 2. **Extração de Feições Correspondentes:** Com base na comparação dos atributos, o plugin extrai as feições que possuem os mesmos atributos nas colunas selecionadas, preservando sua geometria original.
