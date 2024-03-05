@@ -11,7 +11,7 @@ author=Matheus Oliveira de Freitas
 email=matheus18.1@yahoo.com
 
 about=The Compare_attributes plugin is a tool developed for QGIS that allows users to compare two Shapefiles and extract features with corresponding attributes. With an intuitive interface, this plugin simplifies the process of comparing and extracting geospatial data in the QGIS environment.
-Effectively handles different types of data in selected columns, ensuring accurate comparisons even with different data types.
+Effectively handles different types of data in selected columns, ensuring accurate comparisons even with different data types
 In addition to features with corresponding attributes, the plugin also allows the extraction of features that have unique attributes in relation to the other Shapefile
 
 tracker=http://bugs
