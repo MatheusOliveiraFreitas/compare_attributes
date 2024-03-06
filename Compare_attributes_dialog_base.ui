@@ -253,7 +253,7 @@
    <item row="2" column="0">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Unique Attributes Shapefile 1. (Mandatory)</string>
+      <string>Common Attributes Shapefile 1. (Required)</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
