@@ -36,6 +36,4 @@ O plugin "Compare_attribute é uma ferramenta desenvolvida para o QGIS que permi
  
 O plugin "Comparador de Shapefiles" está integrado perfeitamente ao ambiente do QGIS, proporcionando uma experiência de usuário intuitiva e eficiente. Os usuários podem acessar facilmente as funcionalidades do plugin através da interface do QGIS, simplificando o processo de comparação e extração de dados geoespaciais.
  
----
- 
-Certifique-se de personalizar a descrição de acordo com os recursos específicos e a funcionalidade do seu plugin. Isso ajudará os usuários a entenderem rapidamente como o plugin pode ser útil em seus fluxos de trabalho no QGIS.
+
