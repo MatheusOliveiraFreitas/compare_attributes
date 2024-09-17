@@ -96,14 +96,14 @@
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>Shapefile 2</string>
+      <string>File 2</string>
      </property>
     </widget>
    </item>
    <item row="8" column="0" colspan="4">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Common Attributes Shapefile 1. (Required)</string>
+      <string>Common Attributes File 1. (Required)</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -224,7 +224,7 @@
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>Shapefile 1</string>
+      <string>File 1</string>
      </property>
     </widget>
    </item>
@@ -256,7 +256,7 @@
       <bool>false</bool>
      </property>
      <property name="title">
-      <string>Unique Attributes Shapefile 1. (Optional)</string>
+      <string>Unique Attributes File 1. (Optional)</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
