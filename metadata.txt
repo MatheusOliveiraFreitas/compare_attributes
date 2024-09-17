@@ -6,7 +6,7 @@
 name=Compare_attributes
 qgisMinimumVersion=3.0
 description=Compare Attributes
-version=0.1
+version=1
 author=Matheus Oliveira de Freitas
 email=matheus18.1@yahoo.com
 
@@ -20,7 +20,7 @@ repository=https://github.com/MatheusOliveiraFreitas/compare_attributes
 
 hasProcessingProvider=no
 # Uncomment the following line and add your changelog:
-# changelog=
+# changelog=script optimization, improved extraction of unique values ​​from File 1
 
 # Tags are comma separated with spaces allowed
 tags=python,attribute table, layers, vector,feature, shapefile
