@@ -411,14 +411,14 @@ class attributes:
                     
             if  tipo_da_1 ==tipo_da_2:
                 #Traduzir
-                atr=f"Compatible Column Type{tipo_da_1}={tipo_da_2} "
+                atr=f"Compatible Column Type: {tipo_da_1} = {tipo_da_2} "
                 
                 
                 
             # Caso os tipos da coluna for diferente vira tudo str e foda-se///If the column types are different, everything changes
             else:
                 #Traduzir
-                atr=f"Incompatible Column Type {tipo_da_1} != {tipo_da_2}, the columns were converted to text type "
+                atr=f"Incompatible Column Type: {tipo_da_1} != {tipo_da_2}, the columns were converted to text type "
                 #atr1='d'
                 
                 #Troca o tipo para String da camada 1///Change the type to String from layer 1
@@ -522,38 +522,17 @@ class attributes:
             del camada_gerada
             if contar2>=2:     
                 del camada_gerada2
-            
-                           
+                opi=str(f"A file was generated with unique file attributes {self.nomecamada}")
+                
+            else:
+                opi=str(f"A File with unique attributes of File {self.nomecamada} was not generated")           
             
             caminho=self.saida                   
             self.iface.addVectorLayer(caminho, str.split(os.path.basename(caminho),".")[0], "ogr")
             if contar2>=2:
                 caminho_2=self.saida_2                
                 self.iface.addVectorLayer(caminho_2, str.split(os.path.basename(caminho_2),".")[0], "ogr")
-            '''while True:
-                contar2=len(self.saida_2)
-                if contar2>=2:
-                    local_1=processing.run("native:extractbylocation", 
-                                {'INPUT':self.camada,
-                                'INTERSECT':self.saida,
-                                'PREDICATE': [2],
-                                'OUTPUT': 'memory:'})
-                    limpo_01=processing.run("native:extractbyexpression",
-                                 {'INPUT':local_1['OUTPUT'],
-                                  'EXPRESSION':f'"{self.tabela_1}" is not NUL',
-                                  'OUTPUT':'memory:'})
-                    caminho2=self.saida_2
-                    nome1=limpo_01['OUTPUT']            
-                    res=QgsVectorFileWriter.writeAsVectorFormat(nome1,caminho2,"utf-8",nome1.crs(),"ESRI Shapefile")                   
-                    self.iface.addVectorLayer(caminho2, str.split(os.path.basename(caminho2),".")[0], "ogr")
-                    #Mensagem no finalizador/// Traduzir
-                    opi=str(f"A Shape was generated with the unique attributes of Shapes {self.nomecamada}")
-                    break
-                else:
-                #Traduzir
-                    opi=str(f"A Shape with the unique attributes of Shapes was not generated {self.nomecamada}")
-                    break
-                    pass'''
+
                     
             #Limpar a saida  ///Clean the exit                                           
             self.dlg.lineEdit.clear()
@@ -562,7 +541,7 @@ class attributes:
             #Abrir uma janela com resultado//traduzir
             mensagem = QMessageBox()
             mensagem.setWindowTitle("Finishing")
-            mensagem.setText(f"\n Shapefile 1: {self.nomecamada}; Selected Column= {self.tabela_1}.\n Shapefile 2: {self.nomecamada_2}; Selected Column= {self.tabela_2}.\n Optional File:  {atr}\n")
+            mensagem.setText(f"\nFile 1: {self.nomecamada}; Selected Column= {self.tabela_1}.\nFile 2: {self.nomecamada_2}; Selected Column= {self.tabela_2}.\nOptional File: {opi}.\n{atr}\n")
             mensagem.exec_()
         
             pass
