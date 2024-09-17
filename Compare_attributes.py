@@ -482,8 +482,12 @@ class attributes:
 
             # Camada a ser gerada///Layer to be generated
             camada_gerada = QgsVectorFileWriter(self.saida, "UTF-8", fields, self.rep , self.camada.crs(),'ESRI Shapefile')
-
+           
+            contar2=len(self.saida_2)
+            if contar2>=2:
+                camada_gerada2 = QgsVectorFileWriter(self.saida_2, "UTF-8", col, self.rep , self.camada.crs(),'ESRI Shapefile')
             for C1 in limpo1['OUTPUT'].getFeatures():
+                teste = False
                 for C2 in limpo2['OUTPUT'].getFeatures():
                     # Verificar se as feições têm atributos comuns///Check if features have common attributes
                     if C1[self.tabela_1] == C2[self.tabela_2_pr]:
@@ -499,17 +503,34 @@ class attributes:
                         geometry = C1.geometry() 
                         feature.setGeometry(geometry)
                         camada_gerada.addFeature(feature)
+                        teste=True
+                        break
+                                
 
-            #Deletar                    
+                if not teste and contar2>=2:
+
+                    feature = QgsFeature(fields)
+                    feature.setAttribute(f"{self.tabela_1}", C1[f"{self.tabela_1}"])
+                    for atributo in C1.fields():
+                        feature.setAttribute(atributo.name(), C1[atributo.name()])
+        
+                    geometry = C1.geometry()
+                    feature.setGeometry(geometry)
+                    camada_gerada2.addFeature(feature)
+                        
+                       
             del camada_gerada
-                                            
-
+            if contar2>=2:     
+                del camada_gerada2
+            
                            
             
             caminho=self.saida                   
             self.iface.addVectorLayer(caminho, str.split(os.path.basename(caminho),".")[0], "ogr")
-
-            while True:
+            if contar2>=2:
+                caminho_2=self.saida_2                
+                self.iface.addVectorLayer(caminho_2, str.split(os.path.basename(caminho_2),".")[0], "ogr")
+            '''while True:
                 contar2=len(self.saida_2)
                 if contar2>=2:
                     local_1=processing.run("native:extractbylocation", 
@@ -532,7 +553,7 @@ class attributes:
                 #Traduzir
                     opi=str(f"A Shape with the unique attributes of Shapes was not generated {self.nomecamada}")
                     break
-                    pass
+                    pass'''
                     
             #Limpar a saida  ///Clean the exit                                           
             self.dlg.lineEdit.clear()
@@ -541,7 +562,7 @@ class attributes:
             #Abrir uma janela com resultado//traduzir
             mensagem = QMessageBox()
             mensagem.setWindowTitle("Finishing")
-            mensagem.setText(f"\n Shapefile 1: {self.nomecamada}; Selected Column= {self.tabela_1}.\n Shapefile 2: {self.nomecamada_2}; Selected Column= {self.tabela_2}.\n Optional File: {opi}. {atr}\n")
+            mensagem.setText(f"\n Shapefile 1: {self.nomecamada}; Selected Column= {self.tabela_1}.\n Shapefile 2: {self.nomecamada_2}; Selected Column= {self.tabela_2}.\n Optional File:  {atr}\n")
             mensagem.exec_()
         
             pass
